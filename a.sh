@@ -1,7 +1,6 @@
 #!/bin/bash
 # Source the Cloudcenter user env file to onboard C3 specifc 	vars
 source /usr/local/cliqr/etc/userenv
-cd /home/cliqruser/thatisok
 tee -a /home/cliqruser/.ssh/id_rsa << END
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEApC5x1GOddyA4m4LNRW47+z6cNSPVZLJD3isRsF1IN95F8fpj
