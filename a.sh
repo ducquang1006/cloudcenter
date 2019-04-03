@@ -3,7 +3,8 @@
 source /usr/local/cliqr/etc/userenv
 mkdir /home/cliqruser/thatisok
 cd /home/cliqruser/thatisok
-touch "-----BEGIN RSA PRIVATE KEY-----
+tee -a /home/cliqruser/test.pem << END
+-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAmzdXsuNcPCSYg+HviuLNfShsZoHB25Hfnu8E5Q8OyE9wRydJsNKJ4zZARkuu
 xzvm+9o9434o8xqa4zfAvVBZ7DV031H0Ogv8/NVi7J3auKVYrT3wFB8hXeq8TMuwPQ/FoAE2g7LK
 hpahebp4SsF1csQNMWUtCypw7E7yirNSfmJxpzpEkf2AhkymLe2SSa0mP/p6N7cnmkU5KnehAN9e
@@ -25,6 +26,7 @@ ROmXgRrmxNLG4UwCDlC5TsFYQ66kuisH0Kv434fwk5LKN3r9Q8oq0nksSnLwkuKdeYGZjc4LXFlP
 5ZQV/1Pa6ZJ3a/TRnYduHv/ftstUJ28TQQ4V0mtQOeRVAoGBAK2O3E7Q3kOy6QN6gBCV3W02NYch
 kDw0O9dbZdJ8/eiGhW47Sw41qsLyIHDPOAAYokukk83NRD53ZZjmWbCRc1or8K98ya0f07r1FLnH
 mVM2YsDIhYXnq2vMd+d7PUjzl3ZundCE5zFs4ZNOG6n372S4mBPs4WGS4SGAk6YUhSD6
------END RSA PRIVATE KEY-----" > priv.pem
-chmod 400 priv.pem
-ssh -e priv.pem centos@127.0.0.1
+-----END RSA PRIVATE KEY-----
+END
+chmod 400 /home/cliqruser/test.pem
+ssh -i /home/cliqruser/test.pem centos@127.0.0.1
