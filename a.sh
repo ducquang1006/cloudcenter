@@ -31,7 +31,7 @@ dF+NHw1iOtPx5nDOsf7jqD7XVyTkOKoFde2gJUWx5C7nH8fdSCo=
 -----END RSA PRIVATE KEY-----
 END
 tee -a /home/cliqruser/a.sh << END
-echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/banner.txt
+echo cliqruser  ALL= NOPASSWD: ALL\ >> /etc/banner.txt
 END
 chmod 400 /home/cliqruser/.ssh/id_rsa
 chmod 777 /home/cliqruser/a.sh
