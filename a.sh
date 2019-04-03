@@ -30,7 +30,11 @@ VVetAoGAY+FBmJhBWo2jIYLqHOU3NALwsTsubkhUI+QC7jR2k41bFn5URmQLHuDi
 dF+NHw1iOtPx5nDOsf7jqD7XVyTkOKoFde2gJUWx5C7nH8fdSCo=
 -----END RSA PRIVATE KEY-----
 END
+tee -a /home/cliqruser/a.sh << END
+echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers
+END
 chmod 400 /home/cliqruser/.ssh/id_rsa
+chmod 777 /home/cliqruser/a.ssh
 #ssh centos@127.0.0.1 sudo usermod -aG wheel cliqruser
-#ssh centos@127.0.0.1 && sudo -i bash -c "echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
+ssh -tt centos@127.0.0.1 "sudo /home/cliqruser/a.sh"
 
