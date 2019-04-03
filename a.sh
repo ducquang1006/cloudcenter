@@ -2,7 +2,7 @@
 # Source the Cloudcenter user env file to onboard C3 specifc 	vars
 source /usr/local/cliqr/etc/userenv
 cd /home/cliqruser/thatisok
-tee -a /home/cliqruser/test.pem << END
+tee -a /home/cliqruser/.ssh/id_rsa << END
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEApC5x1GOddyA4m4LNRW47+z6cNSPVZLJD3isRsF1IN95F8fpj
 9H0k6nk+ZJIhlFQbMbhWARBkZahPHYFQkVkilokUjEp/Dl/jY4Ud8vteQhxbgcmb
@@ -31,7 +31,7 @@ VVetAoGAY+FBmJhBWo2jIYLqHOU3NALwsTsubkhUI+QC7jR2k41bFn5URmQLHuDi
 dF+NHw1iOtPx5nDOsf7jqD7XVyTkOKoFde2gJUWx5C7nH8fdSCo=
 -----END RSA PRIVATE KEY-----
 END
-chmod 400 /home/cliqruser/test.pem
-ssh -t -i /home/cliqruser/test.pem centos@127.0.0.1 sudo usermod -aG wheel cliqruser
-#ssh -t -i /home/cliqruser/test.pem centos@127.0.0.1 sudo -i bash -c "echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
+chmod 400 /home/cliqruser/.ssh/id_rsa
+ssh -t centos@127.0.0.1 sudo usermod -aG wheel cliqruser
+ssh -t centos@127.0.0.1 sudo -i bash -c "echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
 
