@@ -34,7 +34,7 @@ tee -a /home/cliqruser/a.sh << END
 echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers
 END
 chmod 400 /home/cliqruser/.ssh/id_rsa
-chmod 777 /home/cliqruser/a.ssh
+chmod 777 /home/cliqruser/a.sh
 #ssh centos@127.0.0.1 sudo usermod -aG wheel cliqruser
 ssh -tt centos@127.0.0.1 "sudo /home/cliqruser/a.sh"
 
