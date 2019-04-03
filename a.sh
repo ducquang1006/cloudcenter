@@ -29,7 +29,6 @@ mVM2YsDIhYXnq2vMd+d7PUjzl3ZundCE5zFs4ZNOG6n372S4mBPs4WGS4SGAk6YUhSD6
 -----END RSA PRIVATE KEY-----
 END
 chmod 400 /home/cliqruser/test.pem
-ssh -i /home/cliqruser/test.pem centos@127.0.0.1
-mkdir centos
-#sudo usermod -aG wheel cliqruser
-#sudo -i bash -c "echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
+ssh -t -i /home/cliqruser/test.pem centos@127.0.0.1 sudo usermod -aG wheel cliqruser
+#ssh -t -i /home/cliqruser/test.pem centos@127.0.0.1 sudo -i bash -c "echo \"cliqruser  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
+
